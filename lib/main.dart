@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_project/utils/app_routes.dart';
+import 'package:news_project/utils/app_theme.dart';
+
+import 'home/home_screen.dart';
 
 void main(){
   runApp(MyApp());
@@ -8,6 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+      initialRoute: AppRoutes.homeScreen,
+      routes: {
+        AppRoutes.homeScreen: (context) => HomeScreen(),
+      },
+      theme: AppThem.lightMode,
+    );
   }
 }
